@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="عرض محتويات سلة التسوق الخاصة بك في موقع سالم DXN. قم بمراجعة المنتجات المضافة قبل إتمام الطلب.">
+    <meta name="robots" content="noindex, nofollow"> <!-- لمنع محركات البحث من فهرسة صفحة السلة -->
+    <title>سلة التسوق | سالم DXN المغرب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .cart-items { margin-top: 20px; }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-left: 15px;
+            border-radius: 4px;
+        }
+        .cart-item-details { flex-grow: 1; }
+        .cart-item-title { font-weight: bold; margin-bottom: 5px; }
+        .cart-item-quantity { color: #555; }
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #dc3545;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        .cart-total { margin-top: 20px; text-align: left; font-size: 1.2em; font-weight: bold; }
+        .empty-cart { text-align: center; padding: 40px 0; color: #777; }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل العلوي -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-envelope"></i> salimjaaouani54@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +212635517699</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- الهيدر الرئيسي -->
+    <header>
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img src="../images/logo.jpg" alt="Salim DXN" class="logo-img">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="ابحث عن منتجات...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="cart">
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="../index.html">الرئيسية</a></li>
+                    <li><a href="coffee.html">المشروبات</a></li>
+                    <li><a href="reishi.html">المكملات الغذائية</a></li>
+                    <li><a href="personal-care.html">العناية الشخصية</a></li>
+                    <li><a href="food.html">المنتجات الغذائية</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- مسار التنقل -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">الرئيسية</a></li>
+                <li>سلة التسوق</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- محتوى سلة التسوق -->
+    <main>
+        <section class="cart-section">
+            <div class="container">
+                <h1 class="section-title">سلة التسوق</h1>
+                <div id="cart-items-container" class="cart-items">
+                    <!-- سيتم ملء محتويات السلة هنا بواسطة JavaScript -->
+                </div>
+                <div id="cart-total" class="cart-total">
+                    <!-- سيتم عرض الإجمالي هنا -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-section">
+                    <h3>Salim DXN</h3>
+                    <p>موزع معتمد لمنتجات شركة DXN الماليزية في المغرب، مدينة بني ملال</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61575823055912"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/salim_j82/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/212635517699"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/@Salim_j81-l4r"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="coffee.html">المشروبات</a></li>
+                        <li><a href="reishi.html">المكملات الغذائية</a></li>
+                        <li><a href="personal-care.html">العناية الشخصية</a></li>
+                        <li><a href="food.html">المنتجات الغذائية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> المغرب، مدينة بني ملال</p>
+                    <p><i class="fas fa-phone"></i> +212635517699</p>
+                    <p><i class="fas fa-envelope"></i> salimjaaouani54@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Salim DXN. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartTotalContainer = document.getElementById('cart-total');
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = ''; // مسح المحتوى الحالي
+                let totalItems = 0;
+                let totalPrice = 0;
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="empty-cart">سلة التسوق فارغة.</p>';
+                    cartTotalContainer.innerHTML = '';
+                } else {
+                    cart.forEach((item, index) => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'cart-item';
+                        itemElement.innerHTML = `
+                            <img src="${item.image}" alt="${item.title}">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">${item.title}</div>
+                                <div class="cart-item-quantity">الكمية: ${item.quantity}</div>
+                                <!-- السعر محذوف بناءً على الطلب السابق -->
+                            </div>
+                            <button class="cart-item-remove" data-index="${index}"><i class="fas fa-trash-alt"></i></button>
+                        `;
+                        cartItemsContainer.appendChild(itemElement);
+                        totalItems += item.quantity;
+                        totalPrice += item.price * item.quantity; // السعر سيكون 0
+                    });
+
+                    // عرض الإجمالي (سيكون 0)
+                    // cartTotalContainer.innerHTML = `الإجمالي: ${totalPrice.toFixed(2)} د.م`;
+                    cartTotalContainer.innerHTML = ''; // لا نعرض الإجمالي لأنه 0
+
+                    // إضافة مستمعي الأحداث لأزرار الحذف
+                    document.querySelectorAll('.cart-item-remove').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const itemIndex = parseInt(this.getAttribute('data-index'));
+                            removeItemFromCart(itemIndex);
+                        });
+                    });
+                }
+                updateCartCountHeader(totalItems);
+            }
+
+            function removeItemFromCart(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartDisplay();
+            }
+
+            function updateCartCountHeader(totalItems) {
+                const cartCountElement = document.querySelector('.cart-count');
+                if (cartCountElement) {
+                    cartCountElement.textContent = totalItems;
+                }
+            }
+
+            // تحديث عرض السلة عند تحميل الصفحة
+            updateCartDisplay();
+        });
+    </script>
+    <!-- لا حاجة لربط main.js هنا لأنه لا يحتوي على وظائف خاصة بهذه الصفحة -->
+</body>
+</html>
+

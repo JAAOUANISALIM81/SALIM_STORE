@@ -1,0 +1,920 @@
+/* إعدادات عامة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #28a745;
+    --accent-color: #ffc107;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --gray: #6c757d;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #004494;
+}
+
+/* شريط التنقل العلوي */
+.top-bar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-left: 15px;
+}
+
+.contact-info i, .user-actions i {
+    margin-left: 5px;
+}
+
+.user-actions a {
+    margin-right: 15px;
+    color: white;
+}
+
+.user-actions a:hover {
+    text-decoration: underline;
+}
+
+/* الهيدر الرئيسي */
+.main-header {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    order: 2; /* تغيير ترتيب العناصر لوضع الشعار على اليمين */
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.logo-img {
+    max-width: 100px; /* تصغير حجم الشعار */
+    height: auto;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    order: 1; /* تغيير ترتيب العناصر */
+}
+
+.search-bar form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 0 0 4px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 24px;
+    color: var(--primary-color);
+    order: 0; /* تغيير ترتيب العناصر */
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* القائمة الرئيسية */
+.main-nav {
+    background-color: var(--primary-color);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    display: block;
+    padding: 15px;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.nav-list a:hover, .nav-list a.active {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* شريط الإعلانات */
+.banner {
+    padding: 30px 0;
+    background-color: #f0f8ff;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.slide-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.slide-content h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.slide-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--gray);
+}
+
+.slide-image {
+    flex: 1;
+    padding: 20px;
+}
+
+/* المنتجات المميزة */
+.featured-products {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-tags {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.tag.new {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.tag.bestseller {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.tag.sale {
+    background-color: #dc3545;
+    color: white;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.product-price {
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.old-price {
+    font-size: 14px;
+    color: var(--gray);
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-to-cart {
+    flex-grow: 1;
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Cairo', sans-serif;
+}
+
+.add-to-cart:hover {
+    background-color: #004494;
+}
+
+.quick-view {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quick-view:hover {
+    background-color: var(--border-color);
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* مميزات الموقع */
+.features {
+    padding: 50px 0;
+    background-color: var(--light-gray);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+    font-size: 30px;
+    color: var(--primary-color);
+    margin-left: 15px;
+}
+
+.feature-content h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.feature-content p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* عن الشركة */
+.about-section {
+    padding: 50px 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* النشرة البريدية */
+.newsletter {
+    padding: 50px 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.newsletter-content {
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.newsletter-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 4px 4px 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.newsletter-form .btn:hover {
+    background-color: #e0a800;
+}
+
+/* تذييل الصفحة */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-color);
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    background-color: #1a252f;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* صفحة التواصل - تحسينات جديدة */
+.page-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,86,179,0.9) 0%, rgba(0,86,179,0.7) 100%);
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.breadcrumb {
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: var(--accent-color);
+}
+
+.contact-section {
+    padding: 0 0 60px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+    padding: 40px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.contact-info h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.info-text h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.info-text p {
+    opacity: 0.8;
+}
+
+.contact-info .social-links {
+    margin-top: 30px;
+}
+
+.contact-info .social-links h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact-info .social-icons {
+    display: flex;
+}
+
+.contact-info .social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.contact-info .social-icons a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    padding: 40px;
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.contact-form h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Cairo', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.contact-form .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.contact-form .btn:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+        order: 0; /* إعادة ترتيب العناصر في الشاشات الصغيرة */
+    }
+    
+    .search-bar {
+        width: 100%;
+        margin: 15px 0;
+        order: 1; /* إعادة ترتيب العناصر في الشاشات الصغيرة */
+    }
+    
+    .cart {
+        order: 2; /* إعادة ترتيب العناصر في الشاشات الصغيرة */
+    }
+    
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: rgba(255,255,255,0.05);
+    }
+    
+    .dropdown-content a {
+        color: white;
+    }
+    
+    .slide {
+        flex-direction: column;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-form .btn {
+        border-radius: 4px;
+    }
+    
+    .page-header {
+        padding: 30px 0;
+    }
+    
+    .page-header h1 {
+        font-size: 28px;
+    }
+    
+    .contact-info, .contact-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-bar .container {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        margin-bottom: 10px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-item {
+        flex-direction: column;
+    }
+    
+    .info-icon {
+        margin-bottom: 10px;
+        margin-left: 0;
+    }
+}
