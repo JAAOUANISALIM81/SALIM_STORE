@@ -6,6 +6,5 @@ Allow: /
 # Disallow cart page explicitly (optional, as meta tag handles it too)
 # Disallow: /pages/cart.html
 
-# Point to the sitemap file (Remember to replace example.com with your actual domain)
-Sitemap: https://example.com/sitemap.xml
-
+# Point to the sitemap file
+Sitemap: https://jaaouanisalim81.github.io/SALIM_STORE/sitemap.xml
